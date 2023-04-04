@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sumash Tech</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.cdnfonts.com/css/samsung-sharp-sans?styles=24555,24554,24553"
+      rel="stylesheet"
+    />
+
+    <style>
+      .samsung {
+        font-family: "Samsung Sharp Sans", sans-serif;
+      }
+      .dropdown:hover .dropdown-menu {
+        display: block;
+      }
+    </style>
+  </head>
+  <body class="">
+    <!-- Large Ui Menu -->
+    <header>
+      <nav class="bg-[#D4D4D4] shadow-lg">
+        <div
+          class="max-w-[1728px] h-[102px] mx-auto flex items-center justify-center space-x-6 relative px-3 md:px-8 xl:px-16"
+        >
+          <!-- Hamburger Menu -->
+          <button
+            id="button"
+            type="button"
+            class="inline-flex text-black transition-all duration-200 rounded-md md:hidden focus:bg-gray-300 hover:bg-gray-100"
+          >
+            <svg
+              id="ham"
+              class="w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewbox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 8h16M4 16h16"
+              />
+            </svg>
+
+            <svg
+              id="close"
+              class="hidden w-6 h-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewbox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <!-- Logo -->
+          <div class="w-1/2 md:w-1/3">
+            <img src="/images/logo.svg" alt="" />
+          </div>
+
+          <!-- Search Button -->
+          <div
+            class="relative h-[56px] hidden md:block flex justify-center w-2/5"
+          >
+            <div class="">
+              <input
+                type="search"
+                id="search-dropdown"
+                class="p-2 pl-8 w-full h-[56px] rounded-lg samsung font-medium text-xl"
+                placeholder="Search For Products"
+                required
+              />
+              <button
+                type="submit"
+                class="absolute top-0 right-0 p-1.5 bg-[#F16A4F] rounded-lg"
+              >
+                <svg
+                  class="w-11 h-11"
+                  viewBox="0 0 44 44"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10.652 9.96452C16.3483 4.47359 24.8254 4.69245 30.0975 9.96452C35.1389 15.006 35.4471 22.9882 31.0221 28.3892L38.8479 36.2159L36.9034 38.1604L29.0768 30.3346C23.6758 34.7596 15.6935 34.4514 10.652 29.41C5.37997 24.1379 5.13207 15.2856 10.652 9.96452ZM28.1529 11.9091C23.8572 7.6133 16.8924 7.6133 12.5966 11.9091C8.30082 16.2048 8.30082 23.1697 12.5966 27.4654C16.8924 31.7612 23.8572 31.7612 28.1529 27.4654C32.4487 23.1697 32.4487 16.2048 28.1529 11.9091Z"
+                    fill="white"
+                  />
+                </svg>
+
+                <span class="sr-only">Search</span>
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="flex items-center space-x-3 xl:space-x-5 lg:w-1/3 justify-end"
+          >
+            <div class="flex items-center">
+              <div class="bg-[#404956] w-11 h-11 rounded-full px-2.5 pt-2">
+                <img
+                  src="/images/user.svg"
+                  alt=""
+                  class="w-6 h-6 text-center"
+                />
+              </div>
+              <p
+                class="ml-5 samsung font-medium sm:text-md xl:text-xl hidden lg:block"
+              >
+                My Account
+              </p>
+            </div>
+            <div class="hidden sm:block">
+              <svg
+                width="1"
+                height="43"
+                viewBox="0 0 1 43"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect width="1" height="43" fill="#646464" />
+              </svg>
+            </div>
+            <div class="flex items-center">
+              <div class="bg-[#404956] w-11 h-11 rounded-full px-2.5 pt-2">
+                <img
+                  src="/images/cart.svg"
+                  alt=""
+                  class="w-6 h-6 text-center"
+                />
+              </div>
+              <p class="ml-5 samsung font-medium text-xl hidden lg:block">
+                Cart
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Mobile menu -->
+        <nav
+          id="header"
+          class="bg-white w-full h-auto rounded-md shadow-md lg:hidden samsung absolute top-24 left-0"
+        >
+          <div class="flow-root">
+            <ui class="flex flex-col px-10 w-full">
+              <li
+                class="inline-flex py-2 font-medium text-black transition-all duration-500 hover:text-sky-600 focus:text-sky-600"
+              >
+                <div class="dropdown w-full">
+                  <button
+                    class="text-md samsung font-medium inline-flex items-center group"
+                  >
+                    <span class="uppercase text-lg">Music & Audio</span>
+                    <svg
+                      class="fill-current h-6 w-6 group-hover:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    class="dropdown-menu hidden ml-5 text-black pt-1 text-md font-medium samsung z-10"
+                  >
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo One</a
+                      >
+                    </li>
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo Two</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="inline-flex py-2 font-medium text-black transition-all duration-500 hover:text-sky-600 focus:text-sky-600"
+              >
+                <div class="dropdown w-full">
+                  <button
+                    class="text-md samsung font-medium inline-flex items-center group"
+                  >
+                    <span class="uppercase text-lg">Charging Essentall</span>
+                    <svg
+                      class="fill-current h-6 w-6 group-hover:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    class="dropdown-menu hidden ml-5 text-black pt-1 text-md font-medium samsung z-10"
+                  >
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo One</a
+                      >
+                    </li>
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo Two</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="inline-flex py-2 font-medium text-black transition-all duration-500 hover:text-sky-600 focus:text-sky-600"
+              >
+                <div class="dropdown w-full">
+                  <button
+                    class="text-md samsung font-medium inline-flex items-center group"
+                  >
+                    <span class="uppercase text-lg">Computer & office</span>
+                    <svg
+                      class="fill-current h-6 w-6 group-hover:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    class="dropdown-menu hidden ml-5 text-black pt-1 text-md font-medium samsung z-10"
+                  >
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo One</a
+                      >
+                    </li>
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo Two</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="inline-flex py-2 font-medium text-black transition-all duration-500 hover:text-sky-600 focus:text-sky-600"
+              >
+                <div class="dropdown w-full">
+                  <button
+                    class="text-md samsung font-medium inline-flex items-center group"
+                  >
+                    <span class="uppercase text-lg">accessories</span>
+                    <svg
+                      class="fill-current h-6 w-6 group-hover:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    class="dropdown-menu hidden ml-5 text-black pt-1 text-md font-medium samsung z-10"
+                  >
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo One</a
+                      >
+                    </li>
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo Two</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="inline-flex py-2 font-medium text-black transition-all duration-500 hover:text-sky-600 focus:text-sky-600"
+              >
+                <div class="dropdown w-full">
+                  <button
+                    class="text-md samsung font-medium inline-flex items-center group"
+                  >
+                    <span class="uppercase text-lg">wearable</span>
+                    <svg
+                      class="fill-current h-6 w-6 group-hover:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    class="dropdown-menu hidden ml-5 text-black pt-1 text-md font-medium samsung z-10"
+                  >
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo One</a
+                      >
+                    </li>
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo Two</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="inline-flex py-2 font-medium text-black transition-all duration-500 hover:text-sky-600 focus:text-sky-600"
+              >
+                <div class="dropdown w-full">
+                  <button
+                    class="text-md samsung font-medium inline-flex items-center group"
+                  >
+                    <span class="uppercase text-lg">Music & Audio</span>
+                    <svg
+                      class="fill-current h-6 w-6 group-hover:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    class="dropdown-menu hidden ml-5 text-black pt-1 text-md font-medium samsung z-10"
+                  >
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo One</a
+                      >
+                    </li>
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo Two</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="inline-flex py-2 font-medium text-black transition-all duration-500 hover:text-sky-600 focus:text-sky-600"
+              >
+                <div class="dropdown w-full">
+                  <button
+                    class="text-md samsung font-medium inline-flex items-center group"
+                  >
+                    <span class="uppercase text-lg">electronices</span>
+                    <svg
+                      class="fill-current h-6 w-6 group-hover:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    class="dropdown-menu hidden ml-5 text-black pt-1 text-md font-medium samsung z-10"
+                  >
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo One</a
+                      >
+                    </li>
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo Two</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li
+                class="inline-flex py-2 font-medium text-black transition-all duration-500 hover:text-sky-600 focus:text-sky-600"
+              >
+                <div class="dropdown w-full">
+                  <button
+                    class="text-md samsung font-medium inline-flex items-center group"
+                  >
+                    <span class="uppercase text-lg">accessories</span>
+                    <svg
+                      class="fill-current h-6 w-6 group-hover:rotate-180"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </button>
+                  <ul
+                    class="dropdown-menu hidden ml-5 text-black pt-1 text-md font-medium samsung z-10"
+                  >
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo One</a
+                      >
+                    </li>
+                    <li class="">
+                      <a
+                        class="hover:bg-gray-200 py-2 px-4 w-full block"
+                        href="#"
+                        >Demo Two</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ui>
+          </div>
+        </nav>
+      </nav>
+      <!-- DropDown Section -->
+      <div class="bg-[#404956] md:block hidden">
+        <div
+          class="flex items-center justify-center flex-wrap md:space-x-3 2xl:space-x-6 h-[76px]"
+        >
+          <div class="dropdown inline-block relative">
+            <button
+              class="text-white text-lg samsung font-medium inline-flex items-center group"
+            >
+              <span class="uppercase">Music & Audio</span>
+              <svg
+                class="fill-current h-6 w-6 group-hover:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu hidden absolute ml-5 text-black pt-1 rounded-lg bg-gray-100 text-lg font-medium samsung z-10"
+            >
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo One</a
+                >
+              </li>
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo Two</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown inline-block relative">
+            <button
+              class="text-white text-lg samsung font-medium inline-flex items-center group"
+            >
+              <span class="uppercase">Charging Essentall</span>
+              <svg
+                class="fill-current h-6 w-6 group-hover:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu hidden absolute ml-5 text-black pt-1 rounded-lg bg-gray-100 text-lg font-medium samsung z-10"
+            >
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo One</a
+                >
+              </li>
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo Two</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown inline-block relative">
+            <button
+              class="text-white text-lg samsung font-medium inline-flex items-center group"
+            >
+              <span class="uppercase">Computer & office</span>
+              <svg
+                class="fill-current h-6 w-6 group-hover:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu hidden absolute ml-5 text-black pt-1 rounded-lg bg-gray-100 text-lg font-medium samsung z-10"
+            >
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo One</a
+                >
+              </li>
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo Two</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown inline-block relative">
+            <button
+              class="text-white text-lg samsung font-medium inline-flex items-center group"
+            >
+              <span class="uppercase">accessories</span>
+              <svg
+                class="fill-current h-6 w-6 group-hover:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu hidden absolute ml-5 text-black pt-1 rounded-lg bg-gray-100 text-lg font-medium samsung z-10"
+            >
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo One</a
+                >
+              </li>
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo Two</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown inline-block relative">
+            <button
+              class="text-white text-lg samsung font-medium inline-flex items-center group"
+            >
+              <span class="uppercase">wearable</span>
+              <svg
+                class="fill-current h-6 w-6 group-hover:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu hidden absolute ml-5 text-black pt-1 rounded-lg bg-gray-100 text-lg font-medium samsung z-10"
+            >
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo One</a
+                >
+              </li>
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo Two</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown inline-block relative">
+            <button
+              class="text-white text-lg samsung font-medium inline-flex items-center group"
+            >
+              <span class="uppercase">electronices</span>
+              <svg
+                class="fill-current h-6 w-6 group-hover:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu hidden absolute ml-5 text-black pt-1 rounded-lg bg-gray-100 text-lg font-medium samsung z-10"
+            >
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo One</a
+                >
+              </li>
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo Two</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown inline-block relative">
+            <button
+              class="text-white text-lg samsung font-medium inline-flex items-center group"
+            >
+              <span class="uppercase">accessories</span>
+              <svg
+                class="fill-current h-6 w-6 group-hover:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                />
+              </svg>
+            </button>
+            <ul
+              class="dropdown-menu hidden absolute ml-5 text-black pt-1 rounded-lg bg-gray-100 text-lg font-medium samsung z-10"
+            >
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo One</a
+                >
+              </li>
+              <li class="">
+                <a class="hover:bg-gray-200 py-2 px-4 block" href="#"
+                  >Demo Two</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- BreadCum Section -->
+    <section class="max-w-[1728px] py-16 m-auto">
+      <div
+        class="flex justify-between items-center flex-col md:flex-row samsung px-3 md:px-12 xl:px-20"
+      >
+        <ol class="inline-flex items-center space-x-1 md:space-x-3">
+          <li class="flex items-center">
+            <a
+              href="#"
+              class="uppercase samsung text-sx md:text-md lg:text-lg font-medium inline-flex items-center"
+            >
+              <svg
+                class="w-6 h-6 mr-2"
+                fill="currentColor"
+                viewbox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+                ></path>
+              </svg>
+              Home
+            </a>
+          </li>
+          <li>
+            <div class="flex items-center">
+              <svg
+                class="w-6 h-6 text-gray-400"
+                fill="currentColor"
+                viewbox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <a
+                href="#"
+                class="uppercase samsung text-sx md:text-md lg:text-lg font-medium"
+                >SmartPhone</a
+              >
+            </div>
+          </li>
+          <li aria-current="page">
+            <div class="flex items-center">
+              <svg
+                class="w-6 h-6 text-gray-400"
+                fill="currentColor"
+                viewbox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span
+                class="uppercase samsung text-sx md:text-md lg:text-lg font-medium"
+                >iPhone 13 Pro Max</span
+              >
+            </div>
+          </li>
+        </ol>
+        <div class="flex space-x-2 pt-5 sm:pt-0">
+          <span class="">
+            <img src="/images/facebook.svg" alt="" />
+          </span>
+          <span class="">
+            <img src="/images/instra.svg" alt="" />
+          </span>
+          <span class="">
+            <img src="/images/ytube.svg" alt="" />
+          </span>
+          <span class="">
+            <img src="/images/wtp.svg" alt="" />
+          </span>
+          <span class="">
+            <img src="/images/in.svg" alt="" />
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Body section -->
+    <section class="mt-5 max-w-[1728px] m-auto px-4 md:px-12 xl:px-20 mb-14">
+      <div
+        class="flex flex-col lg:flex-row lg:flex-wrap xl:flex-nowrap lg:gap-6 2xl:gap-10"
+      >
+        <div
+          class="md:flex md:flex-row lg:flex-col xl:flex-col md:justify-center lg:justify-normal xl:w-1/2"
+        >
+          <div
+            class="xl:w-[480px] xl:h-[620px] 2xl:w-[570px] 2xl:h-[650px] md:w-[500px] md:h-[550px] lg:w-[400px] lg:h-[500px] md:px-3 md:py-8 border border-[#0000002B] rounded-[32px] sm:px-14 py-14 2xl:py-14 xl:py-20 mb-6"
+          >
+            <img class="" src="/images/image 20.svg" alt="" />
+          </div>
+
+          <div
+            class="flex md:flex-col lg:flex-row items-center gap-5 md:ml-10 lg:ml-0 mt-16 md:mt-0 xl:mt-20"
+          >
+            <div
+              class="xl:w-[230px] xl:h-[350px] 2xl:w-[270px] md:w-[250px] md:h-[260px] lg:w-[190px] lg:h-[200px] md:px-4 md:py-5 lg:px-2 lg:py-2 xl:py-14 border border-[#0000002B] py-10 rounded-[32px]"
+            >
+              <img src="/images/image 20.svg" alt="" />
+            </div>
+            <div
+              class="xl:w-[230px] xl:h-[350px] 2xl:w-[270px] md:w-[250px] md:h-[260px] lg:w-[190px] lg:h-[200px] md:px-4 md:py-5 lg:px-2 lg:py-2 xl:py-14 border border-[#0000002B] py-10 rounded-[32px]"
+            >
+              <img class="" src="/images/image 20.svg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/2 xl:1/3 mt-8 xl:mt-0">
+          <p class="samsung font-normal text-xl text-[#404956]">Smartphone</p>
+          <h1 class="samsung font-bold text-[#404956] text-[44px] mt-1">
+            iPhone 13 Pro Max
+          </h1>
+          <div class="flex mt-5 flex-wrap">
+            <span class="bg-[#F4F4F4] px-4 py-2 rounded-xl mr-3">
+              <img src="/images/image 12.svg" alt="" />
+            </span>
+            <span
+              class="flex justify-between items-center border border-[#40495657] px-4 rounded-xl"
+            >
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 26 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24.8759 5.13409C24.1474 3.97899 23.0806 3.07658 21.8207 2.54983C20.3931 1.95061 18.7897 1.84275 17.1839 2.2387C15.7123 2.60158 14.279 3.38864 13 4.5304C11.7208 3.38854 10.2873 2.60143 8.81558 2.23859C7.20972 1.8425 5.6062 1.95046 4.17864 2.55009C2.91871 3.077 1.8519 3.97959 1.12359 5.13485C0.360857 6.3406 -0.0271624 7.80691 0.00147824 9.37509C0.128634 16.3466 10.5135 22.686 12.594 23.8861C12.7175 23.9573 12.8575 23.9948 13 23.9948C13.1425 23.9948 13.2825 23.9573 13.406 23.8861C15.4867 22.6858 25.8724 16.3453 25.9985 9.37387C26.0268 7.80579 25.6386 6.33964 24.8759 5.13409ZM24.3738 9.34467C24.3332 11.5987 22.8305 14.2267 20.0288 16.9443C17.4341 19.461 14.4828 21.3578 13 22.2405C11.5171 21.358 8.56624 19.4614 5.97183 16.9446C3.16992 14.2272 1.66731 11.5995 1.62617 9.34543C1.58128 6.88422 2.77073 4.904 4.80792 4.04829C5.47558 3.76942 6.19235 3.62717 6.9159 3.62995C8.7844 3.62995 10.7609 4.53447 12.4206 6.22213C12.4962 6.29901 12.5864 6.36008 12.6858 6.40176C12.7853 6.44344 12.892 6.46491 12.9999 6.46491C13.1077 6.46491 13.2145 6.44344 13.3139 6.40176C13.4134 6.36008 13.5036 6.29901 13.5792 6.22213C15.8849 3.87756 18.802 3.04459 21.1913 4.04813C23.2287 4.90354 24.4183 6.88345 24.3738 9.34452V9.34467Z"
+                  fill="#A9A9A9"
+                />
+              </svg>
+              <sapn class="ml-4 samsung text-base font-medium text-[#A9A9A9]"
+                >Add To Wishlist</sapn
+              >
+            </span>
+            <span
+              class="flex justify-between items-center sm:ml-7 mt-6 sm:mt-0"
+            >
+              <svg
+                width="27"
+                height="26"
+                viewBox="0 0 27 26"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M4.76185 7.70357C6.46819 7.29686 7.738 5.75007 7.738 3.90402C7.738 1.74788 6.00579 0 3.869 0C1.7322 0 0 1.74788 0 3.90402C0 5.75007 1.26981 7.29686 2.97615 7.70357V17.7182C2.97615 20.2061 4.97485 22.2229 7.44038 22.2229H12.2788L10.8269 23.688C10.4782 24.0399 10.4782 24.6102 10.8269 24.9621C11.1756 25.3139 11.7408 25.3139 12.0895 24.9621L15.0656 21.959C15.4143 21.6071 15.4143 21.0368 15.0656 20.6849L12.0895 17.6819C11.7408 17.33 11.1756 17.33 10.8269 17.6819C10.4782 18.0337 10.4782 18.604 10.8269 18.9559L12.2788 20.421H7.44038C5.96107 20.421 4.76185 19.2109 4.76185 17.7182V7.70357ZM3.869 6.00619C5.01958 6.00619 5.95231 5.06502 5.95231 3.90402C5.95231 2.74303 5.01958 1.80186 3.869 1.80186C2.71842 1.80186 1.78569 2.74303 1.78569 3.90402C1.78569 5.06502 2.71842 6.00619 3.869 6.00619Z"
+                  fill="#A9A9A9"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M15.3633 1.53798C15.712 1.18615 15.712 0.615703 15.3633 0.263873C15.0146 -0.0879576 14.4494 -0.0879576 14.1007 0.263873L11.1246 3.26697C10.7759 3.6188 10.7759 4.18924 11.1246 4.54107L14.1007 7.54416C14.4494 7.89599 15.0146 7.89599 15.3633 7.54416C15.712 7.19233 15.712 6.62189 15.3633 6.27006L13.9114 4.80494H18.7498C20.2291 4.80494 21.4284 6.01502 21.4284 7.50773V17.5224C19.7221 17.9291 18.4522 19.4759 18.4522 21.322C18.4522 23.4781 20.1844 25.226 22.3212 25.226C24.458 25.226 26.1902 23.4781 26.1902 21.322C26.1902 19.4759 24.9203 17.9291 23.214 17.5224V7.50773C23.214 5.01988 21.2154 3.00309 18.7498 3.00309H13.9114L15.3633 1.53798ZM20.2379 21.322C20.2379 20.161 21.1706 19.2198 22.3212 19.2198C23.4718 19.2198 24.4045 20.161 24.4045 21.322C24.4045 22.483 23.4718 23.4241 22.3212 23.4241C21.1706 23.4241 20.2379 22.483 20.2379 21.322Z"
+                  fill="#A9A9A9"
+                />
+              </svg>
+              <p class="ml-3 samsung text-base font-medium text-[#A9A9A9]">
+                Compare
+              </p>
+            </span>
+          </div>
+          <div
+            class="bg-[#F16A4F] text-white text-center rounded-lg text-2xl lg:text-3xl font-medium py-5 px-10 mt-9 xl:w-3/4"
+          >
+            <h1 class="">Choose your capacity.</h1>
+          </div>
+          <div class="flex xl:w-3/4 justify-between gap-4 sm: mt-7">
+            <div
+              class="py-4 md:px-12 px-6 border border-[#A9A9A9] rounded-lg samsung font-medium text-lg"
+            >
+              8GB & 128GB
+            </div>
+            <div
+              class="py-4 md:px-12 px-6 border bg-[#404956] rounded-lg text-white samsung font-medium text-lg"
+            >
+              8GB & 128GB
+            </div>
+          </div>
+          <div class="flex xl:w-3/4 gap-4 justify-between mt-4">
+            <div
+              class="py-4 md:px-12 px-6 border border-[#A9A9A9] rounded-lg samsung font-medium text-lg"
+            >
+              8GB & 128GB
+            </div>
+            <div
+              class="py-4 md:px-12 px-6 border bg-[#404956] rounded-lg text-white samsung font-medium text-lg"
+            >
+              8GB & 128GB
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-3 mt-8 mb-7">
+            <p class="text-xl text-[#000000] font-bold mr-2">Color:</p>
+            <div class="rounded-full w-8 h-8 bg-[#118B91]"></div>
+            <div class="rounded-full w-8 h-8 bg-[#F16A4F]"></div>
+            <div class="rounded-full w-8 h-8 bg-[#404956]"></div>
+          </div>
+          <div>
+            <ul class="space-y-5">
+              <li class="flex items-center">
+                <svg
+                  width="12"
+                  height="13"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_334)">
+                    <path
+                      d="M6 12.562C2.69149 12.562 0 9.87052 0 6.56201C0 3.2535 2.69149 0.562012 6 0.562012C9.30851 0.562012 12 3.2535 12 6.56201C12 9.87052 9.30851 12.562 6 12.562ZM7.85351 6.2085L5.3535 3.70852C5.256 3.61102 5.12801 3.56201 4.99999 3.56201C4.872 3.56201 4.74398 3.61102 4.64648 3.70852C4.45099 3.90401 4.45099 4.22002 4.64648 4.41551L6.79301 6.56201L4.64651 8.70851C4.45102 8.904 4.45102 9.22001 4.64651 9.4155C4.842 9.611 5.15801 9.611 5.3535 9.4155L7.85351 6.9155C8.049 6.72 8.049 6.40402 7.85351 6.2085Z"
+                      fill="#F16A4F"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_334">
+                      <rect
+                        width="12"
+                        height="12"
+                        fill="white"
+                        transform="matrix(1 0 0 -1 0 12.562)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p class="ml-4 text-base text-[#404956] samsung font-medium">
+                  Measure blood oxygen saturation with Oxygen Beats
+                </p>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  width="12"
+                  height="13"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_334)">
+                    <path
+                      d="M6 12.562C2.69149 12.562 0 9.87052 0 6.56201C0 3.2535 2.69149 0.562012 6 0.562012C9.30851 0.562012 12 3.2535 12 6.56201C12 9.87052 9.30851 12.562 6 12.562ZM7.85351 6.2085L5.3535 3.70852C5.256 3.61102 5.12801 3.56201 4.99999 3.56201C4.872 3.56201 4.74398 3.61102 4.64648 3.70852C4.45099 3.90401 4.45099 4.22002 4.64648 4.41551L6.79301 6.56201L4.64651 8.70851C4.45102 8.904 4.45102 9.22001 4.64651 9.4155C4.842 9.611 5.15801 9.611 5.3535 9.4155L7.85351 6.9155C8.049 6.72 8.049 6.40402 7.85351 6.2085Z"
+                      fill="#F16A4F"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_334">
+                      <rect
+                        width="12"
+                        height="12"
+                        fill="white"
+                        transform="matrix(1 0 0 -1 0 12.562)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p class="ml-4 text-base text-[#404956] samsung font-medium">
+                  1.1″ full-color AMOLED Touch screen Display
+                </p>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  width="12"
+                  height="13"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_334)">
+                    <path
+                      d="M6 12.562C2.69149 12.562 0 9.87052 0 6.56201C0 3.2535 2.69149 0.562012 6 0.562012C9.30851 0.562012 12 3.2535 12 6.56201C12 9.87052 9.30851 12.562 6 12.562ZM7.85351 6.2085L5.3535 3.70852C5.256 3.61102 5.12801 3.56201 4.99999 3.56201C4.872 3.56201 4.74398 3.61102 4.64648 3.70852C4.45099 3.90401 4.45099 4.22002 4.64648 4.41551L6.79301 6.56201L4.64651 8.70851C4.45102 8.904 4.45102 9.22001 4.64651 9.4155C4.842 9.611 5.15801 9.611 5.3535 9.4155L7.85351 6.9155C8.049 6.72 8.049 6.40402 7.85351 6.2085Z"
+                      fill="#F16A4F"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_334">
+                      <rect
+                        width="12"
+                        height="12"
+                        fill="white"
+                        transform="matrix(1 0 0 -1 0 12.562)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p class="ml-4 text-base text-[#404956] samsung font-medium">
+                  24/7 Heart Rate monitoring
+                </p>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  width="12"
+                  height="13"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_334)">
+                    <path
+                      d="M6 12.562C2.69149 12.562 0 9.87052 0 6.56201C0 3.2535 2.69149 0.562012 6 0.562012C9.30851 0.562012 12 3.2535 12 6.56201C12 9.87052 9.30851 12.562 6 12.562ZM7.85351 6.2085L5.3535 3.70852C5.256 3.61102 5.12801 3.56201 4.99999 3.56201C4.872 3.56201 4.74398 3.61102 4.64648 3.70852C4.45099 3.90401 4.45099 4.22002 4.64648 4.41551L6.79301 6.56201L4.64651 8.70851C4.45102 8.904 4.45102 9.22001 4.64651 9.4155C4.842 9.611 5.15801 9.611 5.3535 9.4155L7.85351 6.9155C8.049 6.72 8.049 6.40402 7.85351 6.2085Z"
+                      fill="#F16A4F"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_334">
+                      <rect
+                        width="12"
+                        height="12"
+                        fill="white"
+                        transform="matrix(1 0 0 -1 0 12.562)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p class="ml-4 text-base text-[#404956] samsung font-medium">
+                  Amazon Alexa Built-in
+                </p>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  width="12"
+                  height="13"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_334)">
+                    <path
+                      d="M6 12.562C2.69149 12.562 0 9.87052 0 6.56201C0 3.2535 2.69149 0.562012 6 0.562012C9.30851 0.562012 12 3.2535 12 6.56201C12 9.87052 9.30851 12.562 6 12.562ZM7.85351 6.2085L5.3535 3.70852C5.256 3.61102 5.12801 3.56201 4.99999 3.56201C4.872 3.56201 4.74398 3.61102 4.64648 3.70852C4.45099 3.90401 4.45099 4.22002 4.64648 4.41551L6.79301 6.56201L4.64651 8.70851C4.45102 8.904 4.45102 9.22001 4.64651 9.4155C4.842 9.611 5.15801 9.611 5.3535 9.4155L7.85351 6.9155C8.049 6.72 8.049 6.40402 7.85351 6.2085Z"
+                      fill="#F16A4F"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_334">
+                      <rect
+                        width="12"
+                        height="12"
+                        fill="white"
+                        transform="matrix(1 0 0 -1 0 12.562)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p class="ml-4 text-base text-[#404956] samsung font-medium">
+                  15-Day Battery Life
+                </p>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  width="12"
+                  height="13"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_334)">
+                    <path
+                      d="M6 12.562C2.69149 12.562 0 9.87052 0 6.56201C0 3.2535 2.69149 0.562012 6 0.562012C9.30851 0.562012 12 3.2535 12 6.56201C12 9.87052 9.30851 12.562 6 12.562ZM7.85351 6.2085L5.3535 3.70852C5.256 3.61102 5.12801 3.56201 4.99999 3.56201C4.872 3.56201 4.74398 3.61102 4.64648 3.70852C4.45099 3.90401 4.45099 4.22002 4.64648 4.41551L6.79301 6.56201L4.64651 8.70851C4.45102 8.904 4.45102 9.22001 4.64651 9.4155C4.842 9.611 5.15801 9.611 5.3535 9.4155L7.85351 6.9155C8.049 6.72 8.049 6.40402 7.85351 6.2085Z"
+                      fill="#F16A4F"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_334">
+                      <rect
+                        width="12"
+                        height="12"
+                        fill="white"
+                        transform="matrix(1 0 0 -1 0 12.562)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p class="ml-4 text-base text-[#404956] samsung font-medium">
+                  Sleep Monitoring
+                </p>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  width="12"
+                  height="13"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_334)">
+                    <path
+                      d="M6 12.562C2.69149 12.562 0 9.87052 0 6.56201C0 3.2535 2.69149 0.562012 6 0.562012C9.30851 0.562012 12 3.2535 12 6.56201C12 9.87052 9.30851 12.562 6 12.562ZM7.85351 6.2085L5.3535 3.70852C5.256 3.61102 5.12801 3.56201 4.99999 3.56201C4.872 3.56201 4.74398 3.61102 4.64648 3.70852C4.45099 3.90401 4.45099 4.22002 4.64648 4.41551L6.79301 6.56201L4.64651 8.70851C4.45102 8.904 4.45102 9.22001 4.64651 9.4155C4.842 9.611 5.15801 9.611 5.3535 9.4155L7.85351 6.9155C8.049 6.72 8.049 6.40402 7.85351 6.2085Z"
+                      fill="#F16A4F"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_334">
+                      <rect
+                        width="12"
+                        height="12"
+                        fill="white"
+                        transform="matrix(1 0 0 -1 0 12.562)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p class="ml-4 text-base text-[#404956] samsung font-medium">
+                  Women’s Health Tracking
+                </p>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  width="12"
+                  height="13"
+                  viewBox="0 0 12 13"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_1_334)">
+                    <path
+                      d="M6 12.562C2.69149 12.562 0 9.87052 0 6.56201C0 3.2535 2.69149 0.562012 6 0.562012C9.30851 0.562012 12 3.2535 12 6.56201C12 9.87052 9.30851 12.562 6 12.562ZM7.85351 6.2085L5.3535 3.70852C5.256 3.61102 5.12801 3.56201 4.99999 3.56201C4.872 3.56201 4.74398 3.61102 4.64648 3.70852C4.45099 3.90401 4.45099 4.22002 4.64648 4.41551L6.79301 6.56201L4.64651 8.70851C4.45102 8.904 4.45102 9.22001 4.64651 9.4155C4.842 9.611 5.15801 9.611 5.3535 9.4155L7.85351 6.9155C8.049 6.72 8.049 6.40402 7.85351 6.2085Z"
+                      fill="#F16A4F"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_1_334">
+                      <rect
+                        width="12"
+                        height="12"
+                        fill="white"
+                        transform="matrix(1 0 0 -1 0 12.562)"
+                      />
+                    </clipPath>
+                  </defs>
+                </svg>
+                <p class="ml-4 text-base text-[#404956] samsung font-medium">
+                  Music Control
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-wrap xl:flex-nowrap gap-y-4 gap-x-4 items-center xl:space-x-3 mt-10"
+          >
+            <div class="bg-[#D9D9D9] py-2 px-5 rounded-lg samsung text-base">
+              Regular Price:<span class="font-bold"> BDT. 134000</span>
+            </div>
+            <div
+              class="bg-[#F16A4F] py-2 px-4 rounded-lg samsung text-base text-white"
+            >
+              Status: <span class="font-bold">In Stock</span>
+            </div>
+            <div class="bg-[#D9D9D9] py-2 px-6 rounded-lg samsung text-base">
+              Product Code: <span class="font-bold">Sku 2343</span>
+            </div>
+
+            <div></div>
+          </div>
+          <div class="flex items-center mt-10 flex-wrap">
+            <button class="btn rounded-full bg-[#D9D9D9] h-10 w-10 p-3">
+              <svg
+                width="19"
+                height="3"
+                viewBox="0 0 19 3"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1 1.56201H18"
+                  stroke="#404956"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <p class="text-[#404956] text-3xl ml-3 mr-3">1</p>
+            <button class="btn rounded-full bg-[#D9D9D9] h-10 w-10 text-4xl">
+              +
+            </button>
+
+            <div class="sm:ml-10 flex items-center mt-5 sm:mt-0">
+              <button
+                class="bg-[#F16A4F] px-6 py-3 rounded-lg text-base font-medium samsung mr-5"
+              >
+                BUY NOW
+              </button>
+              <button
+                class="bg-[#656262] px-6 py-3 rounded-lg text-base font-medium samsung text-white"
+              >
+                ADD TO CART
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="sm:w-full xl:w-1/5 flex sm:flex-col flex-wrap mt-8">
+          <div class="bg-[#F4F4F4] px-6 py-6 text-base samsung rounded-md mb-5">
+            <p class="text-[#F16A4F] font-bold mb-4">EMI Available!</p>
+            <p class="mb-4 text-lg text-[#404956]">
+              EMI available on Online Payment over 5000BDT. Before order please
+              contact us for product stock availability and updated price.
+            </p>
+            <button
+              class="btn bg-[#F16A4F] text-white samsung font-medium text-base px-5 py-2 rounded-lg"
+            >
+              Learn More
+            </button>
+          </div>
+
+          <div
+            class="bg-[#F4F4F4] p-6 lg:p-3 2xl:p-5 text-base samsung rounded-md mb"
+          >
+            <div
+              class="flex items-center gap-x-4 border border-b border-b-black mb-3"
+            >
+              <img src="/images/sasc (23) 1.svg" alt="" />
+              <div class="ml-4 break-words">
+                <h1 class="font-bold text-[#404956] mb-2 text-base">
+                  CountryWide Delivery
+                </h1>
+                <p class="text-[#404956] mb-2 text-sm">
+                  100% Genuine Product Money-back Guarantee
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-x-4 mb-3 border border-b-black">
+              <img src="/images/sasc (24) 1.svg" alt="" />
+              <div class="ml-4">
+                <h1 class="font-bold text-[#404956] mb-2 text-base">
+                  Buyer Protection
+                </h1>
+                <p class="text-[#404956] mb-2 text-sm">
+                  100% Genuine Product Money-back Guarantee
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-x-4">
+              <img src="/images/Group.svg" alt="" />
+              <div class="ml-4">
+                <h1 class="font-bold text-[#404956] mb-2 text-base">
+                  Payment Method
+                </h1>
+                <p class="text-[#404956] mb-2 text-sm">
+                  bKash/Online Payment Pay Cash on Delivery
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tab Section -->
+    <section
+      class="samsung font-medium lg:text-2xl text-md text-center space-x-2 space-y-5 lg:space-x-20 mb-16 px-4"
+    >
+      <button class="pb-2">Description</button>
+      <button
+        class="font-bold border-b-[#F16A4F] border-b-4 lg:border-b-8 pb-2"
+      >
+        Specification
+      </button>
+      <button class="pb-2">Reviews</button>
+      <button class="pb-2">VIDEOS</button>
+    </section>
+
+    <section class="max-w-[1728px] m-auto px-4 md:px-12 xl:px-20 mb-40">
+      <div class="mb-16 w-full">
+        <img src="/images/Screenshot 2022-06-27 at 11.36 1.svg" alt="" />
+      </div>
+      <div>
+        <img src="/images/Screenshot 2022-06-27 at 11.34 1.svg" alt="" />
+      </div>
+    </section>
+
+    <!-- Script For nav -->
+    <script>
+      let button = document.getElementById("button");
+      button.addEventListener("click", function () {
+        let header = document.getElementById("header");
+        let close = document.getElementById("close");
+        let ham = document.getElementById("ham");
+
+        if (close.classList.contains("hidden") == true) {
+          close.classList.remove("hidden");
+          ham.classList.add("hidden");
+          header.classList.toggle("hidden");
+        } else {
+          close.classList.add("hidden");
+          ham.classList.remove("hidden");
+          header.classList.toggle("hidden");
+        }
+      });
+      header.classList.add("hidden");
+    </script>
+  </body>
+</html>
